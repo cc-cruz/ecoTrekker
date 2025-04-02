@@ -25,7 +25,7 @@ A simple fullscreen map application as an example on how to use MapTiler maps to
 4. :warning: Open the App.js file and replace **YOUR_MAPTILER_API_KEY_HERE** with your actual [MapTiler API key](https://cloud.maptiler.com/account/keys/).
 
   :information_source: If you don't have an API KEY you can create it for **FREE** at https://www.maptiler.com/cloud/
-
+ UPDATE: OPENSTREETMAP.COM & OPENMAPTILES.ORG(vector files) is FREE and OPEN SOURCE
 5. Start your local environment
   ```sh
     npm start
