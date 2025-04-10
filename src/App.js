@@ -5,11 +5,12 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './App.css';
 
-// Removed import for local femaData
+// Import the local FEMA California GeoJSON data
+import femaDataFl from './data/fema_ca_local_data.geojson'; // Using the renamed CA file
 
-// Define a style for the GeoJSON layer (keeping the same style for now)
+// Define a style for the GeoJSON layer
 const femaLayerStyle = {
-  id: 'fema-disaster-areas',
+  id: 'fema-disaster-areas-fl', // Unique ID for Florida layer
   type: 'fill',
   paint: {
     'fill-color': '#088',
@@ -18,8 +19,8 @@ const femaLayerStyle = {
   }
 };
 
-// URL for FEMA DR-4683-CA Public Assistance Designated Areas GeoJSON
-const femaDataSourceUrl = 'https://services.arcgis.com/aJ16ENn1AaqMqGPp/arcgis/rest/services/Designated_Counties_Public_Assistance_DR4683_CA_v1/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson';
+// Removed test URL
+// const testDataSourceUrl = 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson';
 
 function App() {
   return (
@@ -27,17 +28,19 @@ function App() {
       <Navbar/>
       <Map mapLib={maplibregl} 
         initialViewState={{
-          longitude: -122.4194, // San Francisco longitude
-          latitude: 37.7749,  // San Francisco latitude
-          zoom: 7            // Slightly zoomed out to see more of the Bay Area
+          longitude: -119.5, // Central California longitude
+          latitude: 37.0,    // Central California latitude
+          zoom: 5            // Zoomed out to see most of California
         }}
         style={{width: "100%", height: " calc(100vh - 77px)"}}
         mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${process.env.REACT_APP_MAPTILER_API_KEY}`}
       >
         <NavigationControl position="top-left" />
-        {/* Updated Source to use the FEMA URL */}
-        <Source id="fema-data-source" type="geojson" data={femaDataSourceUrl}>
-          <Layer {...femaLayerStyle} />
+        {/* Removed Test Source/Layer */}
+
+        {/* Add Source and Layer for local FEMA FL data (which contains CA coords) */}
+        <Source id="fema-fl-pa-source" type="geojson" data={femaDataFl}>
+          <Layer {...femaLayerStyle} /> 
         </Source>
       </Map>
     </div>
