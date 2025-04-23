@@ -16,8 +16,8 @@ export default function Navbar() {
                     <h1>ecoTrekkers</h1>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="">Home</a>
-                    <a href="">Resources</a>
+                    <a href="/">Home</a>
+                    <a href="resources">Resources</a>
                 </div>
                 <div class="login-wrapper">
                     <button>Login</button>
@@ -39,8 +39,8 @@ export default function Navbar() {
                                 onClick={toggleMenu}
                             />
                         </div>
-                        <a href="">Home</a>
-                        <a href="">Resources</a>
+                        <a href="/">Home</a>
+                        <a href="/resources">Resources</a>
                         <button>Login</button>
                     </div>
                 )}
