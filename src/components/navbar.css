@@ -1,12 +1,137 @@
-.heading {
-  margin: 0;
-  padding: 0px;
-  background-color: #A4C3B2;
-  color: white;
-  text-align: center;
- }
- 
- .heading > h1 {
-  padding: 20px;
-  margin: 0;
- }
+:root {
+    --white: #ffffff;
+    --gray: #616161;
+    --primary: #cce3de;
+    --lightSecondary: #a4c3b2;
+    --darkSecondary: #6b9080;
+}
+
+body {
+    color: var(--gray);
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+h1 {
+    font-family: "Fredoka", sans-serif;
+}
+
+.nav-wrapper-desktop,
+.nav-wrapper-mobile {
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.logo-wrapper {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-left: 20px;
+}
+
+.nav-link-wrapper a,
+.mobile-menu-wrapper a {
+    color: var(--gray);
+    font-size: 20px;
+    text-decoration: none;
+}
+.nav-link-wrapper a:hover,
+.mobile-menu-wrapper > a:hover {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.login-wrapper button,
+.mobile-menu-wrapper button {
+    background: var(--lightSecondary);
+    border-style: solid;
+    border-color: var(--darkSecondary);
+    border-radius: 5px;
+    border-width: 0.75px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+.login-wrapper button:hover,
+.mobile-menu-wrapper button:hover {
+    background-color: var(--darkSecondary);
+}
+
+/* Desktop CSS */
+
+@media (min-width: 768px) {
+    .nav-wrapper-desktop {
+        display: flex;
+    }
+    .nav-wrapper-mobile {
+        display: none;
+    }
+    .mobile-menu-wrapper {
+        display: none;
+    }
+
+    .logo-wrapper img {
+        height: 40px;
+        width: auto;
+    }
+
+    .nav-link-wrapper {
+        display: flex;
+        column-gap: 15px;
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+
+    .login-wrapper {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+/* Mobile CSS */
+@media (max-width: 767px) {
+    .nav-wrapper-desktop {
+        display: none;
+    }
+    .nav-wrapper-mobile {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .mobile-menu-toggle {
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .mobile-menu-toggle img {
+        cursor: pointer;
+    }
+
+    .mobile-menu-wrapper {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0px 20px 20px;
+        text-align: center;
+        z-index: 10000;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    .mobile-menu-wrapper img {
+        margin-top: 11px;
+        margin-left: 100%;
+    }
+}
