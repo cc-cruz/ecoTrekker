@@ -10,10 +10,10 @@ import SearchBar from "./SearchBar";
 function App() {
     const [searchText, setSearchText] = useState("");
     const [mapCoords, setMapCoords] = useState({
-        longitude: -122.42737051190946,
-        latitude: 37.7770397055645,
+        longitude: -120.133,
+        latitude: 38,
     });
-
+    const mapZoom = 5.3;
     const mapRef = React.useRef();
 
     return (
@@ -31,10 +31,13 @@ function App() {
                 initialViewState={{
                     longitude: mapCoords.longitude,
                     latitude: mapCoords.latitude,
-                    zoom: 14,
+                    zoom: mapZoom,
                 }}
+
+                pitchWithRotate={0}
+
                 onMove={(evt) => setMapCoords(evt.viewState)}
-                style={{ width: "100%", height: "calc(100vh - 77px)" }}
+                style={{ width: "100%", height: "calc(100vh - 80px)" }}
                 mapStyle="https://api.maptiler.com/maps/streets/style.json?key=75moNiurc2CUnRkxHPZJ">
                 <NavigationControl position="top-left" />
             </Map>
