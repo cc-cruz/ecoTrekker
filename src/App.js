@@ -9,17 +9,10 @@ import './App.css';
 import { LayerProvider, useLayers } from './contexts/LayerContext.js';
 import DynamicLegend from './components/DynamicLegend';
 
-// Define available map styles
-const MAPTILER_API_KEY = process.env.REACT_APP_MAPTILER_API_KEY;
-const availableMapStyles = {
-  'Streets': `https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_API_KEY}`,
-  'Satellite': `https://api.maptiler.com/maps/hybrid/style.json?key=${MAPTILER_API_KEY}`,
-  'Basic': `https://api.maptiler.com/maps/basic/style.json?key=${MAPTILER_API_KEY}`,
-  // Add more styles if needed (e.g., from OpenMapTiles if not using MapTiler exclusively)
-  // 'OpenStreetMap': 'https://tiles.openstreetmap.org/styles/osm-bright/style.json' // Example non-MapTiler style
-};
+// Define Geoff's required map style URL
+const GEOFF_MAP_STYLE_URL = 'https://api.maptiler.com/maps/019684ce-bf99-76e5-a986-319c7bdeb2ab/style.json?key=2aydo59FoTATDd9gbc2J';
 
-// Removed test URL and old constants
+// Removed dynamic availableMapStyles and related constants
 
 function AppContent() {
   // State for search and map view control
@@ -30,8 +23,7 @@ function AppContent() {
     zoom: 5            // Keep desired initial zoom
   });
 
-  // Map Style Toggle State
-  const [mapStyleUrl, setMapStyleUrl] = useState(availableMapStyles['Streets']); // Default to Streets
+  // Removed mapStyleUrl state
 
   // Map ref
   const mapRef = useRef();
@@ -51,10 +43,7 @@ function AppContent() {
         setSearchText={setSearchText}
         setMapCoords={setMapCoords}
         mapRef={mapRef}
-        // Props for Map Style Toggle
-        mapStyleUrl={mapStyleUrl}
-        availableMapStyles={availableMapStyles}
-        onMapStyleChange={setMapStyleUrl}
+        // Removed props for Map Style Toggle
       />
       <Map
         ref={mapRef}
@@ -68,10 +57,11 @@ function AppContent() {
         pitchWithRotate={0}
         onMove={evt => setMapCoords(evt.viewState)}
         style={{width: "100%", height: " calc(100vh - 77px)"}}
-        mapStyle={mapStyleUrl}
+        mapStyle={GEOFF_MAP_STYLE_URL} // Use Geoff's hardcoded style URL
       >
         <NavigationControl position="top-right" />
 
+        {/* Dynamically render Sources and Layers for active layers */}
         {activeLayers.map(layer => {
           let sourceData;
           if (layer.source.type === 'geojson_url') {
