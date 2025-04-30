@@ -38,7 +38,7 @@ function App() {
 
                 onMove={(evt) => setMapCoords(evt.viewState)}
                 style={{ width: "100%", height: "calc(100vh - 80px)" }}
-                mapStyle="https://api.maptiler.com/maps/streets/style.json?key=75moNiurc2CUnRkxHPZJ">
+                mapStyle="https://api.maptiler.com/maps/019684ce-bf99-76e5-a986-319c7bdeb2ab/style.json?key=2aydo59FoTATDd9gbc2J">
                 <NavigationControl position="top-left" />
             </Map>
         </div>
