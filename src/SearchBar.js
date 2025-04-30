@@ -36,33 +36,15 @@ function SearchBar({ searchText, setSearchText, setMapCoords, mapRef }) {
     
 
   return (
-    <div
-    style={{
-      position: 'absolute',
-      top: '100px',
-      left: '100px',
-      zIndex: 1000,
-      backgroundColor: 'white',
-      padding: '1rem',
-      borderRadius: '8px',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-    }}
-  >
+    <div>
       <input
         type="text"
         placeholder="Enter an address"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        style={{
-          padding: '0.5rem',
-          width: '300px',
-          fontSize: '1rem',
-          marginRight: '0.5rem',
-        }}
       />
       <button
         onClick={handleSearch}
-        style={{ padding: '0.5rem', fontSize: '1rem' }}
       >
         Search
       </button>

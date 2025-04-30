@@ -6,6 +6,14 @@ Quick way to start a web map application with MapLibre GL JS using Create React 
 
 A simple fullscreen map application as an example on how to use MapTiler maps together with React and MapLibre GL JS for your own React app.
 
+## Features
+
+*   **Dynamic Data Layers:** Visualize various datasets beyond the base map, including Natural Disasters and Social Demographics.
+*   **Layer Toggles:** Easily turn data layers on and off using a dedicated control panel.
+*   **Universal Legend:** The map legend automatically updates to show information only for the currently active data layers.
+*   **Configurable:** New data layers can be added by developers via a central configuration file.
+    *   [Learn more about data layer configuration](./docs/data-layers/README.md)
+
 1. Clone this repo 
  
   ```sh

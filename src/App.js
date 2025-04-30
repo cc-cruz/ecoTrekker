@@ -19,6 +19,8 @@ const availableMapStyles = {
   // 'OpenStreetMap': 'https://tiles.openstreetmap.org/styles/osm-bright/style.json' // Example non-MapTiler style
 };
 
+// Removed test URL and old constants
+
 function AppContent() {
   // State for search and map view control
   const [searchText, setSearchText] = useState('');
@@ -108,6 +110,7 @@ function AppContent() {
   );
 }
 
+// Main App component now just sets up the Provider
 function App() {
   return (
     <LayerProvider>
