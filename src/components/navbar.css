@@ -40,7 +40,7 @@ h1 {
     text-decoration: none;
 }
 .nav-link-wrapper a:hover,
-.mobile-menu-wrapper a:hover {
+.mobile-menu-wrapper > a:hover {
     color: black;
     font-size: 20px;
     text-decoration: none;
@@ -110,20 +110,25 @@ h1 {
         margin-right: 20px;
         margin-top: 10px;
     }
+    .mobile-menu-toggle img {
+        cursor: pointer;
+    }
 
     .mobile-menu-wrapper {
-        display: none;
-    }
-    .active.mobile-menu-wrapper {
         background-color: white;
         display: flex;
         flex-direction: column;
         row-gap: 20px;
         position: absolute;
         top: 0;
-        right: 0%;
+        left: 0;
+        right: 0;
         padding: 0px 20px 20px;
         text-align: center;
+        z-index: 10000;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
     }
     .mobile-menu-wrapper img {
         margin-top: 11px;
