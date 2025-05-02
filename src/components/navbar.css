@@ -63,6 +63,10 @@ h1 {
 .mobile-menu-wrapper button:hover {
     background-color: var(--darkSecondary);
 }
+.login-wrapper button:active,
+.mobile-menu-wrapper button:active {
+    transform: translateY(2px);
+}
 
 /* Desktop CSS */
 

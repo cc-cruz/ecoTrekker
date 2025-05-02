@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useState } from "react";
 import Map, { NavigationControl } from "react-map-gl";
-import Navbar from "./components/navbar.js";
+import Navbar from "../components/navbar.js";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import "./App.css";
-import SearchBar from "./SearchBar";
+import "../App.css";
+import SearchBar from "../SearchBar.js";
 
 function Home() {
     const [searchText, setSearchText] = useState("");

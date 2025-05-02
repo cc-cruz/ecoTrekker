@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,17 @@ export default function Navbar() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const navigate = useNavigate();
+    const navigateLogin = () => {
+        navigate("/login");
+    };
+
+    const navigateLoginMobile = () => {
+        navigateLogin();
+        toggleMenu();
+    };
+
     return (
         <div className="heading">
             <div class="nav-wrapper-desktop">
@@ -20,7 +32,7 @@ export default function Navbar() {
                     <a href="resources">Resources</a>
                 </div>
                 <div class="login-wrapper">
-                    <button>Login</button>
+                    <button onClick={navigateLogin}>Login</button>
                 </div>
             </div>
             <div class="nav-wrapper-mobile">
@@ -41,7 +53,7 @@ export default function Navbar() {
                         </div>
                         <a href="/">Home</a>
                         <a href="/resources">Resources</a>
-                        <button>Login</button>
+                        <button onClick={navigateLoginMobile}>Login</button>
                     </div>
                 )}
             </div>

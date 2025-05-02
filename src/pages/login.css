@@ -1,0 +1,83 @@
+.login-page {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+}
+.login-page h2 {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.login-form,
+.create-account-form {
+    margin-top: 5vw;
+    width: 30vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+.form-section {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form-section input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    height: 25px;
+    padding-left: 0.5rem;
+}
+
+input[type="submit"] {
+    background: var(--lightSecondary);
+    border-style: solid;
+    border-color: var(--darkSecondary);
+    border-radius: 5px;
+    border-width: 0.75px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+input[type="submit"]:hover {
+    background: var(--darkSecondary);
+}
+input[type="submit"]:active {
+    transform: translateY(2px);
+}
+
+.form-section label {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.forgot-password {
+    color: #616161;
+    font-size: 10px;
+    text-align: right;
+    text-decoration: none;
+    margin-top: 3px;
+}
+.forgot-password:hover {
+    color: red;
+}
+.forgot-password:visited {
+    color: purple;
+}
+
+.vertical-rule {
+    border-left: 1px solid #616161;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 8.5rem;
+    opacity: 50%;
+}
