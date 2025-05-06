@@ -81,3 +81,23 @@ input[type="submit"]:active {
     top: 8.5rem;
     opacity: 50%;
 }
+
+/* Mobile CSS */
+@media (max-width: 767px) {
+    .login-page {
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+    .vertical-rule {
+        transform: rotate(90deg);
+        padding-top: 30px;
+    }
+
+    .login-form,
+    .create-account-form {
+        align-self: center;
+        margin-top: 5vw;
+        width: 55vw;
+    }
+}
