@@ -72,6 +72,12 @@ input[type="submit"]:active {
     color: purple;
 }
 
+.validation-error {
+    color: red;
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
 .vertical-rule {
     border-left: 1px solid #616161;
     height: 500px;
