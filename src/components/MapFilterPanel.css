@@ -1,0 +1,95 @@
+/* Basic styling for the map filter panel */
+.map-filter-panel {
+  position: absolute; /* Reverted back to absolute */
+  top: 90px; /* Increased top offset for more padding below Navbar */
+  left: 10px;
+  z-index: 10; /* Ensure it's above the map */
+  /* background-color: rgba(255, 255, 255, 0.9); */ /* REMOVED */
+  /* padding: 15px; */ /* REMOVED */
+  /* border-radius: 8px; */ /* REMOVED */
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.2); */ /* REMOVED */
+  font-family: sans-serif;
+  width: 378px; /* Changed to match eco-filter-frame-outer */
+  max-height: calc(100vh - 100px); /* Adjusted max-height (80px top + 20px bottom margin) */
+  overflow-y: auto; /* Add scroll if content exceeds max height */
+  box-sizing: border-box; /* Include padding/border in the element's total width and height */
+}
+
+/* Styling for SearchBar container (first div) */
+.map-filter-panel > div:first-child { 
+  display: flex; /* Use flexbox to align input and button */
+  align-items: center; /* Vertically align items if they have different heights */
+  padding-bottom: 15px; 
+  margin-bottom: 15px; 
+  border-bottom: 1px solid #eee; 
+}
+
+/* Styling for SearchBar input */
+.map-filter-panel > div:first-child input[type="text"] {
+  flex-grow: 1; /* Allow input to take up available space */
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc; /* Add default border */
+  border-radius: 4px; /* Add slight rounding */
+  box-sizing: border-box; 
+  /* Ensure input doesn't overflow the wider panel */
+}
+
+/* Styling for SearchBar button */
+.map-filter-panel > div:first-child button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Add default border */
+  background-color: #f8f8f8; /* Light background */
+  border-radius: 4px;
+  cursor: pointer;
+  /* width: 60px; Let button size naturally for now, or set fixed width */
+  box-sizing: border-box;
+}
+
+.map-filter-panel > div:first-child button:hover {
+  background-color: #eee; /* Slight hover effect */
+}
+
+.map-filter-panel h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.map-filter-panel h5 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.filter-section {
+  margin-bottom: 15px;
+}
+
+/* Add spacing/styling for individual toggle components if needed */
+.filter-section .layer-toggle {
+  margin-bottom: 5px;
+  display: flex; /* Align checkbox and label */
+  align-items: center;
+}
+
+.filter-section .layer-toggle label {
+  margin-left: 5px;
+}
+
+.filter-section .map-style-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.filter-section .map-style-toggle label {
+  margin-right: 5px;
+}
+
+.filter-section .map-style-toggle select {
+  padding: 3px;
+} 

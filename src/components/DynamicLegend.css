@@ -1,0 +1,74 @@
+/* Add styles for DynamicLegend component here */
+
+.dynamic-legend {
+  /* Example positioning - adjust as needed */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 250px; /* Prevent legend from becoming too wide */
+  max-height: 300px; /* Allow scrolling if content overflows */
+  overflow-y: auto;
+  z-index: 10; /* Ensure it's above the map */
+}
+
+.legend-entry {
+  margin-bottom: 10px;
+}
+
+.legend-entry h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+/* Icon Legend */
+.legend-icon {
+  display: flex;
+  align-items: center;
+}
+
+.legend-icon-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Categorical Legend */
+.categorical-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Continuous Ramp Legend */
+.continuous-ramp-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8em;
+}
+
+.gradient-bar {
+  height: 15px;
+  flex-grow: 1;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+}
+
+.legend-continuous small {
+  font-size: 0.7em;
+  color: #555;
+  display: block;
+  margin-top: 3px;
+} 
