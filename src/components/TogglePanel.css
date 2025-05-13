@@ -1,0 +1,202 @@
+/* Add styles for TogglePanel component here */ 
+
+.eco-filter-frame-outer {
+  position: relative; /* Or as per its placement in the app */
+  width: 378px;
+  /* height: 904px; */ /* Height might be dynamic based on content */
+  background: rgba(255, 255, 255, 0.8); /* Figma: 'Filter Frame' */
+  padding-top: 0; /* Adjusted - SearchBar is now outside this component */
+  padding-left: 23px; /* To position the inner frame based on Figma's left: 23px */
+  /* Add other layout styles as needed for integration */
+}
+
+.eco-filter-frame-inner {
+  width: 332px;
+  /* height: 733px; */ /* Height will be dynamic */
+  background: #FFFFFF; /* Figma: 'Filter Frame' (white) */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Figma: 'Filter Frame' */
+  /* padding-bottom: 10px; */ /* Allow space at the bottom if content overflows */
+}
+
+.eco-map-filter-title {
+  /* Styles from Figma 'Map Filter' text */
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #616161;
+  text-align: center; /* Figma shows it centered above the components */
+  padding-top: 20px; /* Estimated from Figma (101px top of title - (154px top of inner frame - some offset)) */
+  padding-bottom: 20px; /* Spacing before first category */
+  margin: 0;
+}
+
+.eco-category-accordion-section {
+  margin-bottom: -1px; /* To make borders overlap correctly like an accordion */
+}
+
+.eco-category-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 20px; /* Figma: 'Filter Component' */
+  /* gap: 126px; */ /* Replaced by justify-content: space-between */
+  width: 100%; /* Take full width of its container (.eco-filter-frame-inner) */
+  height: 55px; /* Figma: 'Filter Component' */
+  background-color: #FFFFFF; /* Assuming white background for button */
+  border: 1px solid #616161; /* Figma: 'Filter Component' */
+  cursor: pointer;
+  text-align: left;
+}
+
+.eco-category-header:hover {
+  background-color: #f0f0f0; /* Optional: hover effect */
+}
+
+.eco-category-name {
+  /* Styles from Figma 'Category' text */
+  /* width: 110px; */ /* Let it take available space */
+  height: 29px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #616161;
+  flex-grow: 1; /* Allow name to take up space */
+}
+
+.eco-info-icon {
+  width: 20px;
+  height: 20px;
+  background: #616161; /* Figma: 'Info' background (placeholder) */
+  border-radius: 50%; /* Make it circular if it's a plain background */
+  color: white; /* Text color for placeholder 'i' */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif; /* For placeholder 'i' */
+  font-weight: bold;
+  font-size: 14px; /* For placeholder 'i' */
+  /* Replace with actual icon styles if using an icon font/SVG */
+}
+
+/* Styles for Layer Indicators (Phase 3) */
+.eco-indicator-list {
+  padding-left: 40px; /* Figma: 'Indicator Component' left: 60px, adjust as needed for indent. */
+  background-color: #fff; 
+  border-left: 1px solid #616161; /* Match category header border */
+  border-right: 1px solid #616161; /* Match category header border */
+  border-bottom: 1px solid #616161; /* Match category header border for the last list in an open section */
+}
+
+/* Remove bottom border for accordion sections that are followed by another section to avoid double borders */
+.eco-category-accordion-section:not(:last-child) > .eco-indicator-list {
+  /* border-bottom: none; */ /* This might be needed if margin-bottom: -1px on section isn't enough */
+}
+
+.eco-indicator-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 0; /* Right padding on item, left padding handled by list */
+  /* gap: 10px; */ /* Let space-between handle it */
+  width: 100%;
+  min-height: 45px; /* Estimated height for 'Indicator Component' */
+  background: #FFFFFF;
+  border-bottom: 1px solid #E0E0E0; /* Lighter border for items within a list */
+}
+
+.eco-indicator-list .eco-indicator-item:last-child {
+  border-bottom: none; /* No border for the very last item in a list */
+}
+
+.eco-indicator-layer-icon {
+  width: 24px; /* Figma: 'Vector' */
+  height: 24px; /* Figma: 'Vector' */
+  margin-right: 8px; /* Space between icon and name */
+  object-fit: contain; /* Ensure icon aspect ratio is maintained */
+}
+
+.eco-indicator-name {
+  /* Styles from Figma 'Indicator Name' */
+  /* width: 153px; */ /* Let it take available space */
+  /* height: 22px; */
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400; /* Regular weight for indicator names */
+  font-size: 18px; /* Figma size */
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #616161;
+  flex-grow: 1; /* Allow name to take up most space */
+  margin-right: 8px; /* Space before toggle */
+}
+
+/* Custom Toggle Switch Styles */
+.eco-custom-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Figma: 'Toggle' width (Rectangle 2 + Rectangle 3) */
+  height: 20px; /* Figma: 'Toggle' height (Rectangle 2) */
+  margin-right: 8px; /* Space before info icon */
+}
+
+.eco-custom-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.eco-custom-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Default off state */
+  transition: .4s;
+  border-radius: 20px; /* height / 2 */
+}
+
+.eco-custom-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; /* Figma: 'Rectangle 3' height */
+  width: 16px; /* Figma: 'Rectangle 3' width */
+  left: 2px; /* Padding from left */
+  bottom: 2px; /* Padding from bottom */
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .eco-custom-toggle-slider {
+  background-color: #4CAF50; /* Green for on state - adjust to Figma if different */
+}
+
+input:focus + .eco-custom-toggle-slider {
+  box-shadow: 0 0 1px #4CAF50; /* Optional focus style */
+}
+
+input:checked + .eco-custom-toggle-slider:before {
+  transform: translateX(20px); /* width - knob_width - (2 * padding) = 40 - 16 - 4 = 20 */
+}
+
+/* Info icon for indicator items might need slight adjustments if different from category header */
+.eco-indicator-item .eco-indicator-info-icon {
+  /* Inherits .eco-info-icon styles. Can override if needed */
+  /* Example: if size is different */
+  /* width: 16px; */
+  /* height: 16px; */
+  /* font-size: 10px; */
+} 
