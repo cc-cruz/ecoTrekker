@@ -31,6 +31,11 @@ form {
     height: 25px;
     padding-left: 0.5rem;
 }
+.form-section input[type="text"]:focus {
+    border-color: #6b9080;
+    border-style: solid;
+    outline: none;
+}
 
 input[type="submit"] {
     background: var(--lightSecondary);
