@@ -1,0 +1,59 @@
+/* Styles for the LayerToggle component */
+
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Spacing between toggles */
+  cursor: default; /* Change cursor only on the switch itself */
+}
+
+.layer-toggle-icon {
+  margin-right: 8px;
+  color: #555; /* Icon color */
+  font-size: 1.1em;
+}
+
+.layer-toggle-label {
+  flex-grow: 1; /* Take available space */
+  margin-right: 10px;
+  font-size: 0.95em;
+}
+
+/* The switch track */
+.layer-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;  /* Reverted width */
+  height: 20px; /* Reverted height */
+  background-color: #ccc; 
+  border-radius: 20px; /* Reverted radius for pill shape */
+  border: none; /* Removed border */
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* The switch handle */
+.layer-toggle-handle {
+  position: absolute;
+  top: 2px;  /* Reverted offset */
+  left: 2px; /* Reverted offset */
+  width: 16px;  /* Reverted handle size */
+  height: 16px; /* Reverted handle size */
+  background-color: white;
+  border-radius: 50%; /* Reverted handle shape */
+  box-shadow: none; /* Removed shadow */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Active state: change track background */
+.layer-toggle-switch.active {
+  background-color: #2196F3; /* Reverted active color */
+  border: none; /* Ensure no border */
+}
+
+/* Active state: move handle to the right */
+.layer-toggle-switch.active .layer-toggle-handle {
+  /* Reverted transform: 40 - 16 - (2 * 2) = 20px */
+  transform: translateX(20px); 
+} 

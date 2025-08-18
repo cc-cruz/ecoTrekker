@@ -1,7 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import "./navbar.css";
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div className="heading">
             <div class="nav-wrapper-desktop">
@@ -11,7 +17,7 @@ export default function Navbar() {
                 </div>
                 <div class="nav-link-wrapper">
                     <a href="">Home</a>
-                    <a href="">Glossary</a>
+                    <a href="">Resources</a>
                 </div>
                 <div class="login-wrapper">
                     <button>Login</button>
@@ -21,17 +27,23 @@ export default function Navbar() {
                 <div class="logo-wrapper">
                     <h1>ecoTrekkers</h1>
                 </div>
-                <div class="mobile-menu-toggle">
+                <div class="mobile-menu-toggle" onClick={toggleMenu}>
                     <img src="/images/menu-icon.svg" alt="menu-icon" />
                 </div>
-                <div class="mobile-menu-wrapper active">
-                    <div class="mobile-menu-toggle">
-                        <img src="/images/close-icon.svg" alt="close-icon" />
+                {isOpen && (
+                    <div class="mobile-menu-wrapper">
+                        <div class="mobile-menu-toggle">
+                            <img
+                                src="/images/close-icon.svg"
+                                alt="close-icon"
+                                onClick={toggleMenu}
+                            />
+                        </div>
+                        <a href="">Home</a>
+                        <a href="">Resources</a>
+                        <button>Login</button>
                     </div>
-                    <a href="">Home</a>
-                    <a href="">Glossary</a>
-                    <button>Login</button>
-                </div>
+                )}
             </div>
         </div>
     );

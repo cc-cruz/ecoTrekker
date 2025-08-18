@@ -1,0 +1,140 @@
+[
+  {
+    "id": "natural_fire_risk_pmtiles",
+    "name": "Wildfire Hazard Zones (PMTiles)",
+    "category": "Natural Disasters",
+    "description": "California High Hazard Zones (Tier 1) from PMTiles.",
+    "dataAttribution": "CAL FIRE / data.ca.gov",
+    "dataYear": "Varies (see source)",
+    "source": {
+      "type": "pmtiles_vector",
+      "location": "pmtiles://fire_risk.pmtiles",
+      "sourceLayerName": "California_High_Hazard_Zones_Tier_1"
+    },
+    "legendConfig": {
+      "type": "library_icon",
+      "iconName": "FaFire",
+      "description": "Wildfire Hazard Zones"
+    },
+    "layerConfig": {
+      "type": "fill",
+      "paint": {
+        "fill-color": "#FF0000",
+        "fill-opacity": 0.5
+      },
+      "minzoom": 7
+    },
+    "interactionConfig": {
+      "type": "tooltip",
+      "template": "<strong>Hazard Zone</strong><br>Details: {{properties.SOME_PROPERTY}} TBD"
+    },
+    "icon": "icons/toggle/fire.svg",
+    "defaultVisibility": false
+  },
+  {
+    "id": "natural_fire_risk",
+    "name": "Wildfire Risk (ArcGIS)",
+    "category": "Natural Disasters",
+    "description": "Areas identified with significant wildfire risk potential. (Old ArcGIS Source)",
+    "dataAttribution": "NIFC (via ArcGIS)",
+    "dataYear": "Real-time",
+    "source": {
+      "type": "api_geojson",
+      "location": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/USA_Wildfires_v1/FeatureServer/1/query?where=1%3D1&outFields=*&f=geojson"
+    },
+    "legendConfig": {
+      "type": "library_icon",
+      "iconName": "FaFire",
+      "description": "Current Wildfire Perimeters (ArcGIS)"
+    },
+    "dataPreprocessing": null,
+    "layerConfig": {
+      "type": "fill",
+      "paint": {
+        "fill-color": "#FF6600",
+        "fill-opacity": 0.5,
+        "fill-outline-color": "#FF0000"
+      },
+      "layout": {}
+    },
+    "interactionConfig": {
+      "type": "tooltip",
+      "template": "<strong>Wildfire Perimeter</strong><br>Name: {{properties.IncidentName}}<br>Acres: {{properties.GISAcres}}"
+    },
+    "icon": "icons/toggle/fire.svg",
+    "defaultVisibility": true
+  },
+  {
+    "id": "social_median_income",
+    "name": "Median Household Income",
+    "category": "Social Demographics",
+    "description": "Estimated median household income by census tract.",
+    "dataAttribution": "U.S. Census Bureau",
+    "dataYear": "2018-2022",
+    "source": {
+      "type": "geojson_url",
+      "location": "https://api.example.com/data/acs_median_income_tracts.geojson" 
+    },
+    "legendConfig": {
+      "type": "continuous_ramp",
+      "property": "properties.MED_HH_INC", 
+      "colorScheme": "YlGnBu", 
+      "quantization": {
+        "mode": "quantile", 
+        "numClasses": 5 
+      },
+      "unit": "$"
+    },
+    "dataPreprocessing": null,
+     "layerConfig": {
+       "type": "fill",
+       "paint": {
+         "fill-color": "#CCCCCC", 
+         "fill-opacity": 0.75,
+         "fill-outline-color": "#FFFFFF"
+       },
+       "layout": {}
+     },
+    "interactionConfig": {
+       "type": "popup",
+       "template": "<div><strong>Tract {{properties.GEOID}}</strong><br>Median Income: ${{properties.MED_HH_INC}}</div>"
+    },
+    "icon": null,
+    "defaultVisibility": false
+  },
+  {
+    "id": "cejst_communities",
+    "name": "CEJST Disadvantaged Communities",
+    "category": "Environmental Justice",
+    "description": "Census tracts identified as disadvantaged according to the Climate and Economic Justice Screening Tool (v2.0).",
+    "dataAttribution": "CEJST v2.0",
+    "dataYear": 2024,
+    "source": {
+      "type": "api_geojson",
+      "location": "http://localhost:3001/api/layers/cejst_communities"
+    },
+    "legendConfig": { 
+      "type": "categorical",
+      "property": "properties.is_disadvantaged",
+      "categories": [
+        { "value": true, "color": "#d95f02", "label": "Disadvantaged" }
+      ]
+    },
+    "dataPreprocessing": null,
+     "layerConfig": {
+       "type": "fill",
+       "paint": {
+         "fill-color": "#d95f02", 
+         "fill-opacity": 0.6,
+         "fill-outline-color": "#ffffff"
+       },
+       "layout": {}
+     },
+    "interactionConfig": {
+       "type": "popup",
+       "template": "<div><strong>Tract {{properties.GEOID10}}</strong><br>Disadvantaged: {{properties.is_disadvantaged}}</div>"
+    },
+    "icon": null,
+    "defaultVisibility": false
+  }
+] 
